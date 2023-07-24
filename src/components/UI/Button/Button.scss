@@ -1,0 +1,31 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  // border: 1px solid #1976d2;
+  border: 1px solid rgb(211, 47, 47); /* Set the border color */
+  border-radius: 4px;
+  background-color: transparent;
+  // color: #1976d2;
+  color: rgb(211, 47, 47); /* Set the text color */
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    // background-color: rgba(25, 118, 210, 0.04);
+    background-color: rgba(211, 47, 47, 0.04);
+  }
+
+  &:active {
+    // background-color: #1565c0;
+    background-color: rgba(211, 47, 47, 0.12);
+  }
+}
+
+
+
+
