@@ -5,7 +5,6 @@ import thunk from "redux-thunk";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
-// Если в режиме разработки, применяем Redux DevTools, иначе просто applyMiddleware
 const storeEnhancer = isDevelopment
   ? composeWithDevTools(applyMiddleware(thunk))
   : applyMiddleware(thunk);
