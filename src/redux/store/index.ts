@@ -3,8 +3,11 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-export const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
-export type AppDispatch = typeof store.dispatch;
+const isDevelopment = process.env.NODE_ENV === "development";
+
+// Если в режиме разработки, применяем Redux DevTools, иначе просто applyMiddleware
+const storeEnhancer = isDevelopment
+  ? composeWithDevTools(applyMiddleware(thunk))
+  : applyMiddleware(thunk);
+
+export const store = createStore(rootReducer, storeEnhancer);
