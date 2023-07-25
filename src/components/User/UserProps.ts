@@ -1,7 +1,7 @@
+import { UserType } from "../../redux/types/userType";
+
 export type UserProps = {
-  name: string;
-  username: string;
-  email: string;
+  user: UserType;
   filter: string;
   onClick: () => void;
 };
