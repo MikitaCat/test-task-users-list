@@ -3,11 +3,16 @@ import "./UsersSearch.scss";
 import Input from "../UI/Input/Input";
 import { fetchUsers } from "../../redux/actionCreators/users";
 import Button from "../UI/Button/Button";
-import { useTypedDispatch } from "../../redux/hooks/useTypedDispatch";
+import { useAppDispatch } from "../../redux/hooks/useAppDispatch";
 import { UsersSearchProps } from "./UsersSearchProps";
 
 const UsersSearch = ({ searchQuery, setSearchQuery }: UsersSearchProps) => {
-  const dispatch = useTypedDispatch();
+  const dispatch = useAppDispatch();
+
+  const handleReset = () => {
+    setSearchQuery("");
+    dispatch(fetchUsers());
+  };
 
   return (
     <div className="usersSearch">
@@ -16,11 +21,7 @@ const UsersSearch = ({ searchQuery, setSearchQuery }: UsersSearchProps) => {
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search"
       />
-      <Button
-        color="blue"
-        variant="contained"
-        onClick={() => dispatch(fetchUsers())}
-      >
+      <Button color="blue" variant="contained" onClick={() => handleReset()}>
         Reset
       </Button>
     </div>

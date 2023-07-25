@@ -3,12 +3,11 @@ import "./User.scss";
 import { UserProps } from "./UserProps";
 import Button from "../UI/Button/Button";
 import { highlightFilter } from "../../utils/highlitSearch";
-import { useTypedDispatch } from "../../redux/hooks/useTypedDispatch";
-import { UserActionsTypes } from "../../redux/types/usersActionsTypes";
+import { useAppDispatch } from "../../redux/hooks/useAppDispatch";
 import { deleteUser } from "../../redux/actionCreators/users";
 
 const User = ({ user, filter, onClick }: UserProps) => {
-  const dispatch = useTypedDispatch();
+  const dispatch = useAppDispatch();
   const handleContentClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -17,7 +16,7 @@ const User = ({ user, filter, onClick }: UserProps) => {
 
   return (
     <div className="user" onClick={onClick}>
-      <div className="user__content">
+      <div className="user__content" onClick={handleContentClick}>
         <strong>{highlightFilter(user.name, filter)}</strong>
         <div>{highlightFilter(user.username, filter)}</div>
         <div>{highlightFilter(user.email, filter)}</div>
