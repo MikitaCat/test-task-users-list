@@ -33,7 +33,7 @@ const UsersList = ({ filter }: UsersListProps) => {
       {getFilteredUsers().length ? (
         getFilteredUsers().map((user: UserType) => (
           <User
-            key={user.id}
+            key={`${user.id}-${user.username}`}
             user={user}
             filter={filter}
             onClick={() => {

@@ -1,4 +1,4 @@
-import { Action, Dispatch } from "redux";
+import { Dispatch } from "redux";
 import { UserActionsTypes, UsersAction } from "../types/usersActionsTypes";
 import { getUsers } from "../../API/UsersService";
 import { UserType } from "../types/userType";

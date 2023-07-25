@@ -7,7 +7,7 @@
   right: 0;
   left: 0;
   display: none;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 9999;
 
   &__content {
@@ -15,7 +15,7 @@
     padding: 25px;
     background: $white-color;
     border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     min-width: 296px;
     max-width: 500px;
     align-items: flex-start;
