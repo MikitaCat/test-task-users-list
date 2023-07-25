@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { UsersListProps } from "./UsersListProps";
 import User from "../User/User";
-import { UserType } from "../../redux/types/userType";
+import { UserType } from "../../models/userType";
 import Modal from "../UI/Modal/Modal";
 import { useAppSelector } from "../../redux/hooks/useAppSelector";
 import Alert from "../UI/Alert/Alert";

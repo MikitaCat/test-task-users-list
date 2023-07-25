@@ -1,4 +1,4 @@
-import { UserType } from "../../redux/types/userType";
+import { UserType } from "../../models/userType";
 
 export type UserProps = {
   user: UserType;

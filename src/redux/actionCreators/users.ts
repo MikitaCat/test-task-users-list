@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { UserActionsTypes, UsersAction } from "../types/usersActionsTypes";
 import { getUsers } from "../../API/UsersService";
-import { UserType } from "../types/userType";
+import { UserType } from "../../models/userType";
 import { RootState } from "../reducers";
 import { ThunkAction } from "redux-thunk";
 

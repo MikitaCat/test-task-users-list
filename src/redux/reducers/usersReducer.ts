@@ -1,4 +1,4 @@
-import { UserType } from "../types/userType";
+import { UserType } from "../../models/userType";
 import {
   UserActionsTypes,
   UserState,
