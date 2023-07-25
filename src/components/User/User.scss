@@ -9,4 +9,9 @@
   margin-top: 15px;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+
+  &__content {
+    cursor: default;
+  }
 }
