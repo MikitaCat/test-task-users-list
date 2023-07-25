@@ -2,9 +2,11 @@ import React from "react";
 import { ButtonProps } from "./ButtonProps";
 import "./Button.scss";
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick, color, variant }: ButtonProps) => {
+  const classNames = `button ${variant} ${color}`;
+
   return (
-    <button className="button" onClick={() => onClick()}>
+    <button className={classNames} onClick={() => onClick()}>
       {children}
     </button>
   );

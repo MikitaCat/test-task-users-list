@@ -8,11 +8,12 @@ import { UserType } from "./redux/types/userType";
 import { useTypedDispatch } from "./redux/hooks/useTypedDispatch";
 import { fetchUsers } from "./redux/actionCreators/users";
 import Button from "./components/UI/Button/Button";
+import UsersSearch from "./components/UsersSearch/UsersSearch";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [viewModal, setViewModal] = useState(false);
   const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const dispatch = useTypedDispatch();
   const { users } = useTypedSelector((state) => state.users) as any;
@@ -32,12 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <Input
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search"
-      />
-      <Button onClick={() => dispatch(fetchUsers())}>Reset</Button>
+      <UsersSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       {getFilteredUsers().length ? (
         getFilteredUsers().map((user: UserType) => (
           <User

@@ -23,7 +23,13 @@ const User = ({ user, filter, onClick }: UserProps) => {
         <div>{highlightFilter(user.email, filter)}</div>
       </div>
       <div className="user__btns" onClick={handleContentClick}>
-        <Button onClick={() => dispatch(deleteUser(user))}>Delete</Button>
+        <Button
+          color="red"
+          variant="outlined"
+          onClick={() => dispatch(deleteUser(user))}
+        >
+          Delete
+        </Button>
       </div>
     </div>
   );

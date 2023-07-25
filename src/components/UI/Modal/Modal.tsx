@@ -24,6 +24,8 @@ const Modal = ({ children, visible, title, setVisible }: ModalProps) => {
         {children}
         <div className="modal__btns">
           <Button
+            color="blue"
+            variant="outlined"
             onClick={() => {
               setVisible(false);
             }}
